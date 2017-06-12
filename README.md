@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bradhowes/notebookjs-katex.svg?branch=master)](https://travis-ci.org/bradhowes/notebookjs-katex)
+[![Build Status](https://travis-ci.org/bradhowes/remarkable-katex.svg?branch=master)](https://travis-ci.org/bradhowes/remarkable-katex)
 
 # Overview
 
