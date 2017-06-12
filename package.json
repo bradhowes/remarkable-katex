@@ -1,6 +1,6 @@
 {
     "name": "remarkable-katex",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Plugin for Remarkable to process embedded math expressions in Markdown text.",
     "main": "index.js",
     "homepage": "https://github.com/bradhowes/remarkable-katex",
