@@ -34,7 +34,7 @@ None right now.
 
 # Dependencies
 
-* [katex](https://github.com/Khan/KaTeX) -- performs the rendering of the LaTeX commands.
+* [KaTeX](https://github.com/Khan/KaTeX) -- performs the rendering of the LaTeX commands.
 
 # Tests
 
