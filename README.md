@@ -6,10 +6,8 @@ This is a [Remarkable](https://github.com/jonschlinkert/remarkable) plugin that 
 [LaTeX math expressions](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html) between `$...$` (inline) or
 `$$...$$` (block) delimiters into math HTML. It should not interfere with any other Markdown processing.
 
-I use this to perform server-side math expression rendering for my
-blog, [Keystroke Countdown](https://keystrokecountdown.com).
-
-> **NOTE**: currently the delimiters are hard–coded. Customizing this is work for a future release.
+I use this to perform server-side math expression rendering for my blog, [Keystroke
+Countdown](https://keystrokecountdown.com).
 
 # To Use
 
@@ -30,7 +28,12 @@ md.use(plugin);
 
 # Configuration
 
-None right now.
+Accepts a `delimiter` option that defines the 1-character delimiter to use when recognizing KaTeX spans. Default
+is the `$` character.
+
+```
+{delimiter: '$'}
+```
 
 # Dependencies
 
