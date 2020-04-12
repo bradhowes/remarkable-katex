@@ -9,7 +9,6 @@ module.exports = (md, options) => {
   const opts = options || {};
   const delimiter = opts.delimiter || dollar;
   if (delimiter.length !== 1) throw 'invalid delimiter';
-  console.log('delimiter:', delimiter);
   const katex = require("katex");
 
   /**
