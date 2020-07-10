@@ -1,6 +1,6 @@
 {
   "name": "remarkable-katex",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Plugin for Remarkable to process embedded math expressions in Markdown text.",
   "main": "index.js",
   "homepage": "https://github.com/bradhowes/remarkable-katex",
@@ -21,7 +21,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-transform-runtime-aliasing": "^2.0.0",
-    "katex": "0.11.1",
+    "katex": "^0.11.1",
     "remarkable": "^1.7.1",
     "vows": "^0.8.3"
   },
