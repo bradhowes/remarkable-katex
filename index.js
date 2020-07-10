@@ -81,31 +81,45 @@ module.exports = (md, options) => {
     const start = state.pos, max = state.posMax;
     let pos = start, marker;
 
+    // Unexpected starting character
     if (state.src.charAt(pos) !== delimiter) return false;
+
     ++pos;
     while (pos < max && state.src.charAt(pos) === delimiter) ++pos;
 
+    // Capture the length of the starting delimiter -- closing one must match in size
     marker = state.src.slice(start, pos);
     if (marker.length > 2) return false;
 
-    let matchStart = pos, matchEnd = pos;
-    while ((matchStart = state.src.indexOf(delimiter, matchEnd)) !== -1) {
-      matchEnd = matchStart + 1;
+    let spanStart = pos;
+    let escapedDepth = 0;
+    while (pos < max) {
+      let char = state.src.charAt(pos);
+      if (char === '{') {
+        escapedDepth += 1;
+      }
+      else if (char === '}') {
+        escapedDepth -= 1;
+        if (escapedDepth < 0) return false;
+      }
+      else if (char === delimiter && escapedDepth == 0) {
+        let matchStart = pos;
+        let matchEnd = pos + 1;
+        while (matchEnd < max && state.src.charAt(matchEnd) === delimiter)
+          ++matchEnd;
 
-      while (matchEnd < max && state.src.charAt(matchEnd) === delimiter)
-        ++matchEnd;
-
-      if (matchEnd - matchStart == marker.length) {
-        if (!silent) {
-          var content = state.src.slice(pos, matchStart)
+        if (matchEnd - matchStart == marker.length) {
+          if (!silent) {
+            const content = state.src.slice(spanStart, matchStart)
                 .replace(/[ \n]+/g, ' ')
                 .trim();
-          state.push({type: 'katex', content: content, block: marker.length > 1, level: state.level});
+            state.push({type: 'katex', content: content, block: marker.length > 1, level: state.level});
+          }
+          state.pos = matchEnd;
+          return true;
         }
-
-        state.pos = matchEnd;
-        return true;
       }
+      pos += 1;
     }
 
     if (! silent) state.pending += marker;
