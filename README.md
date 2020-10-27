@@ -19,11 +19,21 @@ Install this package using `npm`:
 
 Assuming you already have `Remarkable` installed, one way to use would be like so:
 
+**CommonJS**
 ```javascript
 var Remarkable = require('remarkable');
 var plugin = require('remarkable-katex');
 var md = new Remarkable();
 md.use(plugin);
+```
+
+**ES6**
+```javascript
+import { Remarkable } from 'remarkable';
+import rkatex from 'remarkable-katex';
+
+var md = new Remarkable();
+md.use(rkatex);
 ```
 
 # Configuration

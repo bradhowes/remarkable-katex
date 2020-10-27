@@ -4,7 +4,7 @@
  * Plugin for Remarkable Markdown processor which transforms $..$ and $$..$$ sequences into math HTML using the
  * Katex package.
  */
-module.exports = (md, options) => {
+const rkatex = (md, options) => {
   const dollar = '$';
   const opts = options || {};
   const delimiter = opts.delimiter || dollar;
@@ -132,3 +132,5 @@ module.exports = (md, options) => {
   md.renderer.rules.katex = (tokens, idx) => renderKatex(tokens[idx].content, tokens[idx].block);
   md.renderer.rules.katex.delimiter = delimiter;
 };
+
+module.exports = rkatex;
