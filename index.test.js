@@ -71,6 +71,30 @@ vows.describe('KatexPlugin').addBatch({
       assert.notEqual(topic.indexOf('<span class="katex">'), -1);
     }
   },
+  'Render $...$ in text with embedded {': {
+    topic: mdWithDollar.render('Equation $\\left\\{ hi \\right.$.'),
+    'Starts with "<p>Equation "': function(topic) {
+      assert.isTrue(topic.startsWith('<p>Equation '));
+    },
+    'Ends with ".</p>"': function(topic) {
+      assert.isTrue(topic.endsWith('</span>.</p>\n'));
+    },
+    'Contains math span': function(topic) {
+      assert.notEqual(topic.indexOf('<span class="katex">'), -1);
+    }
+  },
+  'Render $...$ in text with embedded }': {
+    topic: mdWithDollar.render('Equation $\\left\\{ hi \\right\\}$.'),
+    'Starts with "<p>Equation "': function(topic) {
+      assert.isTrue(topic.startsWith('<p>Equation '));
+    },
+    'Ends with ".</p>"': function(topic) {
+      assert.isTrue(topic.endsWith('</span>.</p>\n'));
+    },
+    'Contains math span': function(topic) {
+      assert.notEqual(topic.indexOf('<span class="katex">'), -1);
+    }
+  },
   'Render @...@ in text': {
     topic: mdWithAt.render('Equation @x + y@.'),
     'Starts with "<p>Equation "': function(topic) {

@@ -5,6 +5,7 @@
  * Katex package.
  */
 const rkatex = (md, options) => {
+  const backslash = '\\';
   const dollar = '$';
   const opts = options || {};
   const delimiter = opts.delimiter || dollar;
@@ -97,9 +98,9 @@ const rkatex = (md, options) => {
     let escapedDepth = 0;
     while (pos < max) {
       const char = state.src.charAt(pos);
-      if (char === '{') {
+      if (char === '{' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
         escapedDepth += 1;
-      } else if (char === '}') {
+      } else if (char === '}' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
         escapedDepth -= 1;
         if (escapedDepth < 0) { return false; }
       } else if (char === delimiter && escapedDepth === 0) {
