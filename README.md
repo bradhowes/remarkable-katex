@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/bradhowes/remarkable-katex.svg?branch=master)](https://travis-ci.org/bradhowes/remarkable-katex)
+[![CI](https://github.com/bradhowes/remarkable-katex/workflows/CI/badge.svg)](https://github.com/bradhowes/remarkable-katex)
+[![License: MIT](https://img.shields.io/badge/License-MIT-A31F34.svg)](https://opensource.org/licenses/MIT)
 
 # Overview
 
