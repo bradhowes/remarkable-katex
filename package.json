@@ -16,14 +16,12 @@
     "url": "https://keystrokecountdown.com"
   },
   "license": "MIT",
+  "dependencies": {
+    "katex": "0",
+    "remarkable": "1"
+  },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
-    "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-transform-runtime-aliasing": "^2.0.0",
-    "katex": "^0.11.1",
-    "remarkable": "^1.7.1",
-    "vows": "^0.8.3"
+    "vows": "0"
   },
   "repository": {
     "type": "git",
