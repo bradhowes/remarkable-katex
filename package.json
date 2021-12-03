@@ -16,11 +16,9 @@
     "url": "https://keystrokecountdown.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "katex": "0",
-    "remarkable": "1"
-  },
   "devDependencies": {
+    "katex": "0",
+    "remarkable": "1",
     "vows": "0"
   },
   "repository": {
