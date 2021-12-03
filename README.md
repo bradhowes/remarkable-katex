@@ -8,7 +8,10 @@ This is a [Remarkable](https://github.com/jonschlinkert/remarkable) plugin that 
 `$$...$$` (block) delimiters into math HTML. It should not interfere with any other Markdown processing.
 
 I use this to perform server-side math expression rendering for my blog, [Keystroke
-Countdown](https://keystrokecountdown.com).
+Countdown](https://keystrokecountdown.com). The post 
+[Metalsmith Plugins for Server-side KaTeX Processing](https://keystrokecountdown.com/articles/metalsmith2/index.html)
+talks about the implementation of this package as well as a Jupyter IPython notebook plugin that does 
+similar processing.
 
 # To Use
 
