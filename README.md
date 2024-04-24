@@ -25,7 +25,7 @@ Assuming you already have `Remarkable` installed, one way to use would be like s
 
 **CommonJS**
 ```javascript
-const {Remarkable, utils } = require('remarkable');
+const { Remarkable, utils } = require('remarkable');
 const plugin = require('remarkable-katex');
 const md = new Remarkable();
 md.use(plugin, {delimiter: ''});
