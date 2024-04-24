@@ -2,7 +2,7 @@
 
 const vows = require('vows');
 const assert = require('assert');
-const Remarkable = require('remarkable');
+const { Remarkable, utils } = require('remarkable');
 
 const plugin = require('./index.js');
 
