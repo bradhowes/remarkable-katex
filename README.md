@@ -25,19 +25,19 @@ Assuming you already have `Remarkable` installed, one way to use would be like s
 
 **CommonJS**
 ```javascript
-var Remarkable = require('remarkable');
-var plugin = require('remarkable-katex');
-var md = new Remarkable();
-md.use(plugin);
+const {Remarkable, utils } = require('remarkable');
+const plugin = require('remarkable-katex');
+const md = new Remarkable();
+md.use(plugin, {delimiter: ''});
 ```
 
 **ES6**
 ```javascript
-import { Remarkable } from 'remarkable';
-import rkatex from 'remarkable-katex';
+import { Remarkable, utils } from 'remarkable';
+import { rkatex } from 'remarkable-katex';
 
-var md = new Remarkable();
-md.use(rkatex);
+const md = new Remarkable();
+md.use(rkatex, {delimiter: ''});
 ```
 
 # Configuration
